@@ -1,4 +1,18 @@
-﻿Public Class Quiz
+﻿Public Class DrinkClass
+    Public DrinkName As String
+    Public Recipe As String
+    Public Quiz As QuizClass
+
+    Public Sub New(ByVal Name As String, ByVal RecipeFilename As String, ByVal QuizFilename As String)
+        '   Set the drink name to used for a given instance of the class
+        DrinkName = Name
+        Recipe = RecipeFilename
+        Quiz = New QuizClass(ByVal Name As String, ByVal QuizFilename As String)
+
+    End Sub
+
+End Class
+Public Class QuizClass
 
     Public DrinkName As String
     Public QuizFileName As String
