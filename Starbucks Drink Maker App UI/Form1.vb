@@ -5,7 +5,7 @@
     Dim CurrentQuiz As New ArrayList
     Dim QuizQuestionIdx As Integer
     Dim NumQuizQuestions As Integer
-
+    Dim CurrentUser As User
     Dim DrinkDict As New Dictionary(Of String, DrinkClass)
 
     Private Sub HomeForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
