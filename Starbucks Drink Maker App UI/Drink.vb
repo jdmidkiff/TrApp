@@ -1,11 +1,14 @@
-﻿Public Class Drink
-    Structure question
-        Public question As String
-        Public answer1 As String
-        Public answer2 As String
-        Public answer3 As String
-        Public answer4 As String
-        Public correct As Int16
+﻿Public Class Quiz
+
+    Private Structure Question
+        Public Question As String
+        Public AnswerList As Array
+        Public CorrectAnswer As Integer
     End Structure
+
+    Private QuestionList As New List(Of Question)
+
+    '   Public Sub 
+
 
 End Class
