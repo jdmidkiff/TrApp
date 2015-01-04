@@ -55,7 +55,7 @@
         SelectDrink("chai")
     End Sub
 
-    Private Sub Picturebox_Logo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pbxlogo.Click
+    Private Sub Picturebox_Logo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Picturebox_Logo.Click
         ShowContentPanel(Panel_Instructions)
         SelectDrink("hide")
         SelectAction("none")
