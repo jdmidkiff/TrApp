@@ -131,16 +131,18 @@
                     Case "quizzes"
                         '   TakeQuiz(SelectedDrink)
 
+                        Dim q = DrinkDict(SelectedDrink).Quiz.GetQuestion()
+
                         Label_Quiz_Question.Visible = True
-                        Label_Quiz_Question.Text = DrinkDict(SelectedDrink).Quiz.GetQuestion().Question
+                        Label_Quiz_Question.Text = q.Question
                         RadioButton_Quiz_Answer1.Visible = True
-                        RadioButton_Quiz_Answer1.Text = DrinkDict(SelectedDrink).Quiz.GetQuestion().AnswerList(0)
+                        RadioButton_Quiz_Answer1.Text = q.AnswerList(0)
                         RadioButton_Quiz_Answer2.Visible = True
-                        RadioButton_Quiz_Answer2.Text = DrinkDict(SelectedDrink).Quiz.GetQuestion().AnswerList(1)
+                        RadioButton_Quiz_Answer2.Text = q.AnswerList(1)
                         RadioButton_Quiz_Answer3.Visible = True
-                        RadioButton_Quiz_Answer3.Text = DrinkDict(SelectedDrink).Quiz.GetQuestion().AnswerList(2)
+                        RadioButton_Quiz_Answer3.Text = q.AnswerList(2)
                         RadioButton_Quiz_Answer4.Visible = True
-                        RadioButton_Quiz_Answer4.Text = DrinkDict(SelectedDrink).Quiz.GetQuestion().AnswerList(3)
+                        RadioButton_Quiz_Answer4.Text = q.AnswerList(3)
 
                 End Select
                 Panel_Drink.Show()

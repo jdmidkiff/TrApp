@@ -17,6 +17,8 @@ Public Class QuizClass
     Public DrinkName As String
     Public QuizFileName As String
     Private CurrentQuestion As Question
+    Public CurrentQuestionNumber = 0
+    Public NumberOfQuestions = 0
 
     Public Structure Question
         Dim Question As String
@@ -24,7 +26,7 @@ Public Class QuizClass
         Dim CorrectAnswer As Integer
     End Structure
 
-    Private QuestionList As New List(Of Question)
+    Public QuestionList As New List(Of Question)
 
     Public Sub New(ByVal Name As String, ByVal Filename As String)
         '   This method is a constructor for the Quiz object loads data from a file containing the quiz data  
@@ -54,32 +56,43 @@ Public Class QuizClass
                     AnswerList.Add(CurrentRow(3))
                     AnswerList.Add(CurrentRow(4))
 
-                    currQuestion.AnswerList = AnswerList
+                    currQuestion.AnswerList = AnswerList.ToList()
                     currQuestion.CorrectAnswer = Int(CurrentRow(5))
 
                     '   Add the question to the list of questions associated with the current quiz...
                     QuestionList.Add(currQuestion)
 
-                    '   Clear the Answer list to prevent the list to prevent answers from being carried over to the next question... 
+                    '   Clear the Answer list to prevent answers from being carried over to the next question... 
                     AnswerList.Clear()
 
                 Catch ex As Microsoft.VisualBasic.FileIO.MalformedLineException
                     MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
                 End Try
             End While
+
+            NumberOfQuestions = QuestionList.Count
         End Using
     End Sub
 
     Public Function GetQuestion() As Question
         '   Dim q As Question
 
-        CurrentQuestion.Question = "Where art thou?"
-        CurrentQuestion.AnswerList = New List(Of String)
-        CurrentQuestion.AnswerList.Add("In the shed")
-        CurrentQuestion.AnswerList.Add("In the Viranda")
-        CurrentQuestion.AnswerList.Add("In the Rose Garden")
-        CurrentQuestion.AnswerList.Add("In the Boat House")
-        CurrentQuestion.CorrectAnswer = 2
+        '   Static entry for testing purposes...
+        'CurrentQuestion.Question = "Where art thou?"
+        'CurrentQuestion.AnswerList = New List(Of String)
+        'CurrentQuestion.AnswerList.Add("In the shed")
+        'CurrentQuestion.AnswerList.Add("In the Viranda")
+        'CurrentQuestion.AnswerList.Add("In the Rose Garden")
+        'CurrentQuestion.AnswerList.Add("In the Boat House")
+        'CurrentQuestion.CorrectAnswer = 2
+
+        CurrentQuestionNumber = CurrentQuestionNumber + 1
+
+        If (CurrentQuestionNumber < NumberOfQuestions) Then
+            CurrentQuestion = QuestionList(CurrentQuestionNumber)
+        Else
+            CurrentQuestion = New Question
+        End If
 
         GetQuestion = CurrentQuestion
     End Function
