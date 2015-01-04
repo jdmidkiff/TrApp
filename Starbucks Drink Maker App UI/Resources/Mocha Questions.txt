@@ -1,0 +1,9 @@
+﻿In what order do you add the ingredients to a mocha?/Add steamed milk, add espresso shots and swirl in cup, add sauce to cup, top with whipped cream./Add sauce to cup, top with whipped cream, add espresso shots and swirl in cup, add steamed milk./Add espresso shots and swirl in cup, add steamed milk, add sauce to cup, top with whipped cream./Add sauce to cup, add espresso shots and swirl in cup, add steamed milk, top with whipped cream./4
+How many shots of espresso are in an 8 Fl.oz mocha?/Five/Three/One/Two/3
+How many shots of espresso are in a 12 Fl.oz mocha?/One/Two/Three/Four/1
+How many shots of espresso are in a 16 Fl.oz mocha?/One/Two/Three/Four/2
+How many shots of espresso are in a 20 Fl.oz mocha?/Two/Four/Three/Five/1
+How many pumps of mocha sauce are in an 8 Fl.oz mocha?/Five/Two/Three/One/4
+How many pumps of mocha sauce are in a 12 Fl.oz mocha?/Two/Three/Four/Five/1
+How many pumps of mocha sauce are in a 16 Fl.oz mocha?/One/Two/Three/Four/4
+How many pumps of mocha sauce are in a 20 Fl.oz mocha?/Two/Five/One/Three/2

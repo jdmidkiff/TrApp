@@ -1,0 +1,9 @@
+﻿In what order do you add the ingredients to a latte?/Add syrup to cup, add espresso shots and swirl in cup, add steamed milk, add foamed milk./Add espresso shots and swirl in cup, add steamed milk, add syrup to cup, add foamed milk./Add steamed milk, add syrup to cup, add foamed milk, add espresso shots and swirl in cup./Add with foamed milk, add steamed milk, add espresso shots and swirl in cup, add syrup to cup./1
+How many shots of espresso are in an 8 Fl.oz latte?/Five/Three/One/Two/3
+How many shots of espresso are in a 12 Fl.oz latte?/One/Two/Three/Four/1
+How many shots of espresso are in a 16 Fl.oz latte?/One/Two/Three/Four/2
+How many shots of espresso are in a 20 Fl.oz latte?/Two/Four/Three/Five/4
+How many pumps of syrup are in an 8 Fl.oz latte?/Five/Two/Three/One/4
+How many pumps of syrup are in a 12 Fl.oz latte?/Two/Three/Four/Five/1
+How many pumps of syrup are in a 16 Fl.oz latte?/One/Two/Three/Four/4
+How many pumps of syrup are in a 20 Fl.oz latte?/Two/Five/One/Three/2

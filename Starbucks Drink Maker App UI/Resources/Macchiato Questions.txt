@@ -1,0 +1,9 @@
+﻿In what order do you add the ingredients to a macchiato? / Top with Fontana™ Caramel Sauce in a cross hatch pattern, add syrup to cup, add ice to 0.25" from rim, pour shots over ice, add chilled milk.  / Add chilled milk, add syrup to cup, pour shots over ice, top with Fontana™ Caramel Sauce in a cross hatch pattern, add ice to 1/4" from rim. / Add syrup to cup, add chilled milk, add ice to 1/4" from rim, pour shots over ice, top with Fontana™ Caramel Sauce in a cross hatch pattern. / Add syrup to cup, add chilled milk, pour shots over ice, add ice to 1/4" from rim, top with Fontana™ Caramel Sauce in a cross hatch pattern. / 3
+How many shots of espresso are in a 12 Fl.oz macchiato? / One / Two / Three / Four / 1
+How many shots of espresso are in a 16 Fl.oz macchiato? / One / Two / Three / Four / 2
+How many shots of espresso are in a 20 Fl.oz macchiato? / Two / Four / Three / Five / 3
+How many pumps of syrup are in a 12 Fl.oz macchiato? / Two / Three / Four / Five / 1
+How many pumps of syrup are in a 16 Fl.oz macchiato? / One / Two / Three / Four / 3
+How many pumps of syrup are in a 20 Fl.oz macchiato? / Two / Five / One / Three / 2
+How much milk goes into the cup? / A quarter / Halfway / Three quarters / To the top / 2
+
