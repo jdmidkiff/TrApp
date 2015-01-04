@@ -247,4 +247,16 @@
         MsgBox("Move to next question..." & vbCrLf & "SelectedAnswer = " & SelectedAnswer.ToString() & vbCrLf & "correct = " & correct.ToString())
 
     End Sub
+
+    Public Sub ShowQuestion(ByVal Question As QuizClass.Question, ByVal QuestionIdx As Integer)
+        ' Update the view showing the question
+        Me.Label_Quiz_Question.Text = Question.Question
+
+        Me.RadioButton_Quiz_Answer1.Text = Question.AnswerList(0)
+        Me.RadioButton_Quiz_Answer2.Text = Question.AnswerList(1)
+        Me.RadioButton_Quiz_Answer3.Text = Question.AnswerList(2)
+        Me.RadioButton_Quiz_Answer4.Text = Question.AnswerList(3)
+
+        Me.QuizQuestionIdx = QuestionIdx
+    End Sub
 End Class
