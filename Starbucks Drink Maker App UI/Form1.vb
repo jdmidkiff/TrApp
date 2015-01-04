@@ -15,14 +15,10 @@
         SelectDrink("hide")
         SelectAction("none")
 
-        Dim d As New DrinkClass("Chai", ".\resources\Starbucks Chai Recipe Card.png", ".\resources\Chai Questions.txt")
-        DrinkDict.Add("Chai", d)
-        d = New DrinkClass("Latte", ".\resources\Starbucks Latte Recipe Card.png", ".\resources\Latte Questions.txt")
-        DrinkDict.Add("Latte", d)
-        d = New DrinkClass("Macchiato", ".\resources\Starbucks Macchiato Recipe Card.png", ".\resources\Macchiato Questions.txt")
-        DrinkDict.Add("Macchiato", d)
-        d = New DrinkClass("Mocha", ".\resources\Starbucks Mocha Recipe Card.png", ".\resources\Mocha Questions.txt")
-        DrinkDict.Add("Mocha", d)
+        DrinkDict.Add("Chai", New DrinkClass("Chai", ".\resources\Starbucks Chai Recipe Card.png", ".\resources\Chai Questions.txt"))
+        DrinkDict.Add("Latte", New DrinkClass("Latte", ".\resources\Starbucks Latte Recipe Card.png", ".\resources\Latte Questions.txt"))
+        DrinkDict.Add("Macchiato", New DrinkClass("Macchiato", ".\resources\Starbucks Macchiato Recipe Card.png", ".\resources\Macchiato Questions.txt"))
+        DrinkDict.Add("Mocha", New DrinkClass("Mocha", ".\resources\Starbucks Mocha Recipe Card.png", ".\resources\Mocha Questions.txt"))
 
     End Sub
 
