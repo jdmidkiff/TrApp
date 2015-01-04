@@ -28,7 +28,7 @@ Partial Class HomeForm
         Me.Button_Results = New System.Windows.Forms.Button()
         Me.Button_Exit = New System.Windows.Forms.Button()
         Me.Button_Recipes = New System.Windows.Forms.Button()
-        Me.pbxlogo = New System.Windows.Forms.PictureBox()
+        Me.Picturebox_Logo = New System.Windows.Forms.PictureBox()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.Panel_Drink = New System.Windows.Forms.Panel()
         Me.Label_Drink_Latte = New System.Windows.Forms.Label()
@@ -60,7 +60,7 @@ Partial Class HomeForm
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        CType(Me.pbxlogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Picturebox_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
@@ -85,7 +85,7 @@ Partial Class HomeForm
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button_Results)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button_Exit)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button_Recipes)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.pbxlogo)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Picturebox_Logo)
         '
         'SplitContainer1.Panel2
         '
@@ -134,15 +134,15 @@ Partial Class HomeForm
         Me.Button_Recipes.Text = "RECIPES"
         Me.Button_Recipes.UseVisualStyleBackColor = True
         '
-        'pbxlogo
+        'Picturebox_Logo
         '
-        Me.pbxlogo.Image = CType(resources.GetObject("pbxlogo.Image"), System.Drawing.Image)
-        Me.pbxlogo.Location = New System.Drawing.Point(3, 3)
-        Me.pbxlogo.Name = "pbxlogo"
-        Me.pbxlogo.Size = New System.Drawing.Size(155, 141)
-        Me.pbxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbxlogo.TabIndex = 0
-        Me.pbxlogo.TabStop = False
+        Me.Picturebox_Logo.Image = CType(resources.GetObject("Picturebox_Logo.Image"), System.Drawing.Image)
+        Me.Picturebox_Logo.Location = New System.Drawing.Point(3, 3)
+        Me.Picturebox_Logo.Name = "Picturebox_Logo"
+        Me.Picturebox_Logo.Size = New System.Drawing.Size(155, 141)
+        Me.Picturebox_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Picturebox_Logo.TabIndex = 0
+        Me.Picturebox_Logo.TabStop = False
         '
         'SplitContainer2
         '
@@ -293,13 +293,13 @@ Partial Class HomeForm
         '
         'Button_Next_Quiz_Question
         '
+        Me.Button_Next_Quiz_Question.Enabled = False
         Me.Button_Next_Quiz_Question.Location = New System.Drawing.Point(371, 382)
         Me.Button_Next_Quiz_Question.Name = "Button_Next_Quiz_Question"
         Me.Button_Next_Quiz_Question.Size = New System.Drawing.Size(107, 34)
         Me.Button_Next_Quiz_Question.TabIndex = 12
         Me.Button_Next_Quiz_Question.Text = "Next >>>"
         Me.Button_Next_Quiz_Question.UseVisualStyleBackColor = True
-        Me.Button_Next_Quiz_Question.Visible = False
         '
         'Label_Quiz_Counter
         '
@@ -476,7 +476,7 @@ Partial Class HomeForm
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
-        CType(Me.pbxlogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Picturebox_Logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -496,7 +496,7 @@ Partial Class HomeForm
 
     End Sub
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
-    Friend WithEvents pbxlogo As System.Windows.Forms.PictureBox
+    Friend WithEvents Picturebox_Logo As System.Windows.Forms.PictureBox
     Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
     Friend WithEvents Button_Exit As System.Windows.Forms.Button
     Friend WithEvents Button_Results As System.Windows.Forms.Button

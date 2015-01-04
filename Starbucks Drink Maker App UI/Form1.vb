@@ -40,22 +40,22 @@
     End Sub
 
     Private Sub Label_Drink_Latte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label_Drink_Latte.Click
-        SelectDrink("latte")
+        SelectDrink("Latte")
     End Sub
 
     Private Sub Label_Drink_Mocha_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label_Drink_Mocha.Click
-        SelectDrink("mocha")
+        SelectDrink("Mocha")
     End Sub
 
     Private Sub Label_Drink_Macchiato_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label_Drink_Macchiato.Click
-        SelectDrink("macchiato")
+        SelectDrink("Macchiato")
     End Sub
 
     Private Sub Label_Drink_Chai_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label_Drink_Chai.Click
-        SelectDrink("chai")
+        SelectDrink("Chai")
     End Sub
 
-    Private Sub Picturebox_Logo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pbxlogo.Click
+    Private Sub Picturebox_Logo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Picturebox_Logo.Click
         ShowContentPanel(Panel_Instructions)
         SelectDrink("hide")
         SelectAction("none")
@@ -122,7 +122,7 @@
 
         '   Set the desired button's background color to highlight it...
         Select Case SelectedDrink
-            Case "chai"
+            Case "Chai"
                 Label_Drink_Chai.BackColor = SelectededBackColor
                 Select Case SelectedAction
                     Case "recipes"
@@ -130,10 +130,22 @@
                         PictureBox_Recipe.Visible = True
                     Case "quizzes"
                         '   TakeQuiz(SelectedDrink)
+
+                        Label_Quiz_Question.Visible = True
+                        Label_Quiz_Question.Text = DrinkDict(SelectedDrink).Quiz.GetQuestion().Question
+                        RadioButton_Quiz_Answer1.Visible = True
+                        RadioButton_Quiz_Answer1.Text = DrinkDict(SelectedDrink).Quiz.GetQuestion().AnswerList(0)
+                        RadioButton_Quiz_Answer2.Visible = True
+                        RadioButton_Quiz_Answer2.Text = DrinkDict(SelectedDrink).Quiz.GetQuestion().AnswerList(1)
+                        RadioButton_Quiz_Answer3.Visible = True
+                        RadioButton_Quiz_Answer3.Text = DrinkDict(SelectedDrink).Quiz.GetQuestion().AnswerList(2)
+                        RadioButton_Quiz_Answer4.Visible = True
+                        RadioButton_Quiz_Answer4.Text = DrinkDict(SelectedDrink).Quiz.GetQuestion().AnswerList(3)
+
                 End Select
                 Panel_Drink.Show()
 
-            Case "latte"
+            Case "Latte"
                 Label_Drink_Latte.BackColor = SelectededBackColor
                 Select Case SelectedAction
                     Case "recipes"
@@ -144,7 +156,7 @@
                 End Select
                 Panel_Drink.Show()
 
-            Case "macchiato"
+            Case "Macchiato"
                 Label_Drink_Macchiato.BackColor = SelectededBackColor
                 Select Case SelectedAction
                     Case "recipes"
@@ -155,7 +167,7 @@
                 End Select
                 Panel_Drink.Show()
 
-            Case "mocha"
+            Case "Mocha"
                 Label_Drink_Mocha.BackColor = SelectededBackColor
                 Select Case SelectedAction
                     Case "recipes"
@@ -195,4 +207,44 @@
 
     End Sub
 
+    Private Sub RadioButton_Quiz_Answer1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton_Quiz_Answer1.CheckedChanged
+        Button_Next_Quiz_Question.Enabled = True
+        Button_Next_Quiz_Question.Visible = True
+    End Sub
+
+    Private Sub RadioButton_Quiz_Answer2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton_Quiz_Answer2.CheckedChanged
+        Button_Next_Quiz_Question.Enabled = True
+
+    End Sub
+
+    Private Sub RadioButton_Quiz_Answer3_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton_Quiz_Answer3.CheckedChanged
+        Button_Next_Quiz_Question.Enabled = True
+
+    End Sub
+
+    Private Sub RadioButton_Quiz_Answer4_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton_Quiz_Answer4.CheckedChanged
+        Button_Next_Quiz_Question.Enabled = True
+
+    End Sub
+
+    Private Sub Button_Next_Quiz_Question_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button_Next_Quiz_Question.Click
+
+        Dim SelectedAnswer = 0
+        If (RadioButton_Quiz_Answer1.Checked) Then
+            SelectedAnswer = 1
+        ElseIf (RadioButton_Quiz_Answer2.Checked) Then
+            SelectedAnswer = 2
+        ElseIf (RadioButton_Quiz_Answer3.Checked) Then
+            SelectedAnswer = 3
+        ElseIf (RadioButton_Quiz_Answer4.Checked) Then
+            SelectedAnswer = 4
+        Else
+            MsgBox("Unexpected situation ... no option appears to be selected")
+        End If
+
+        Dim correct = DrinkDict(SelectedDrink).Quiz.CheckAnswer(SelectedAnswer)
+
+        MsgBox("Move to next question..." & vbCrLf & "SelectedAnswer = " & SelectedAnswer.ToString() & vbCrLf & "correct = " & correct.ToString())
+
+    End Sub
 End Class
