@@ -40,11 +40,10 @@
     Public Sub StartQuiz(ByVal Drink As DrinkClass)
         ' Setting current quiz to the given quiz
         CurrentQuiz = Drink.Quiz
-
         ' Resetting the current score for the given quiz to 0
         CurrentScores(CurrentQuiz.DrinkName) = 0
-
-        ' #### SET SHOWING FIRST QUESTION ####
+        ' Showing first question
+        NextQuestion()
     End Sub
 
     Public Sub NextQuestion()
