@@ -11,7 +11,7 @@
 
     ' Current score for quiz
     Private currentScores As Dictionary(Of String, Integer)
-    Private currentQuiz As Quiz
+    Private currentQuiz As QuizClass
 
     ' Public member variable indicating whether the user previsouly existed
     Public existed As Boolean
@@ -37,7 +37,7 @@
         ' #### ADD CHECKING IF USER EXISTS ####
     End Sub
 
-    Public Sub startQuiz(ByVal quiz As Quiz)
+    Public Sub startQuiz(ByVal quiz As QuizClass)
         ' Setting current quiz to the given quiz
         'currentQuiz = quiz
 

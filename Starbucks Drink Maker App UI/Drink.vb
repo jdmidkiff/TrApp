@@ -7,7 +7,7 @@
         '   Set the drink name to used for a given instance of the class
         DrinkName = Name
         Recipe = RecipeFilename
-        Quiz = New QuizClass(ByVal Name As String, ByVal QuizFilename As String)
+        Quiz = New QuizClass(Name, QuizFilename)
 
     End Sub
 
@@ -32,28 +32,36 @@ Public Class QuizClass
         '   Set the drink name to used for a given instance of the class
         DrinkName = Name
 
+        Dim CurrentRow As String()
+        Dim currQuestion As New Question
+        Dim AnswerList As New List(Of String)
+
         '   Open the data file & read the data into a "Question" object
-        Using QuizReader As New Microsoft.VisualBasic.FileIO.TextFieldParser(QuizFileName)
+        Using QuizReader As New Microsoft.VisualBasic.FileIO.TextFieldParser(Filename)
             QuizReader.TextFieldType = FileIO.FieldType.Delimited
             QuizReader.SetDelimiters("/")
-            Dim CurrentRow As String()
 
             '   Iterate through the rows in the data file...
             While Not QuizReader.EndOfData
                 Try
                     CurrentRow = QuizReader.ReadFields()
-                    Dim currQuestion As New Question
 
                     '   Load data from the file into the appropriate object variables...
                     currQuestion.Question = CurrentRow(0)
-                    currQuestion.AnswerList.Add(CurrentRow(1))
-                    currQuestion.AnswerList.Add(CurrentRow(2))
-                    currQuestion.AnswerList.Add(CurrentRow(3))
-                    currQuestion.AnswerList.Add(CurrentRow(4))
-                    currQuestion.CorrectAnswer = CurrentRow(5)
+
+                    AnswerList.Add(CurrentRow(1))
+                    AnswerList.Add(CurrentRow(2))
+                    AnswerList.Add(CurrentRow(3))
+                    AnswerList.Add(CurrentRow(4))
+
+                    currQuestion.AnswerList = AnswerList
+                    currQuestion.CorrectAnswer = Int(CurrentRow(5))
 
                     '   Add the question to the list of questions associated with the current quiz...
                     QuestionList.Add(currQuestion)
+
+                    '   Clear the Answer list to prevent the list to prevent answers from being carried over to the next question... 
+                    AnswerList.Clear()
 
                 Catch ex As Microsoft.VisualBasic.FileIO.MalformedLineException
                     MsgBox("Line " & ex.Message & "is not valid and will be skipped.")

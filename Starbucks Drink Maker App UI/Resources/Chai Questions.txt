@@ -1,7 +1,7 @@
-﻿In what order do you add the ingredients to a mocha? / Add mixture to cup, combine chai and milk and steam, top with 1/4" foamed milk. / Combine chai and milk and steam, add mixture to cup, top with 1/4" foamed milk. / Top with 1/4" foamed milk, combine chai and milk and steam, add mixture to cup. / Add mixture to cup, combine chai and milk, top with 1/4" foamed milk, add steam. / 2
+﻿In what order do you add the ingredients to a mocha? / Add mixture to cup, combine chai and milk and steam, top with 0.25" foamed milk. / Combine chai and milk and steam, add mixture to cup, top with 0.25" foamed milk. / Top with 0.25" foamed milk, combine chai and milk and steam, add mixture to cup. / Add mixture to cup, combine chai and milk, top with 0.25" foamed milk, add steam. / 2
 How many ounces of milk are in an 12 Fl.oz chai? / 3 oz. / 5 oz. / 7 oz. / 9 oz. / 2
 How many ounces of milk are in a 16 Fl.oz chai? / 9 oz. / 5 oz. / 3 oz. / 7 oz. / 4
 How many ounces of milk are in a 20 Fl.oz chai? / 9 oz. / 3 oz. / 7 oz. / 5 oz. / 1
-How many ounces of chai concentrate are in an 12 Fl.oz chai? 9 oz. / 3 oz. / 7 oz. / 5 oz. / 4
+How many ounces of chai concentrate are in an 12 Fl.oz chai? / 9 oz. / 3 oz. / 7 oz. / 5 oz. / 4
 How many ounces of chai concentrate are in a 16 Fl.oz chai? / 3 oz. / 5 oz. / 7 oz. / 9 oz. / 3
 How many ounces of chai concentrate are in a 20 Fl.oz chai? / 9 oz. / 5 oz. / 3 oz. / 7 oz. / 1
