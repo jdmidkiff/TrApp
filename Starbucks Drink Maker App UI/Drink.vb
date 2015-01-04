@@ -7,7 +7,7 @@
         '   Set the drink name to used for a given instance of the class
         DrinkName = Name
         Recipe = RecipeFilename
-        Quiz = New QuizClass(ByVal Name As String, ByVal QuizFilename As String)
+        Quiz = New QuizClass(Name, QuizFilename)
 
     End Sub
 

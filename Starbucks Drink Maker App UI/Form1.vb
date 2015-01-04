@@ -2,9 +2,9 @@
     '   Declare class-level variables to keep track of the user's selections...
     Dim SelectedDrink As String
     Dim SelectedAction As String
-    Dim CurrentQuiz As New ArrayList
     Dim QuizQuestionIdx As Integer
     Dim NumQuizQuestions As Integer
+    Dim CurrentUser As User
 
     Private Sub HomeForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         SelectedDrink = ""
@@ -184,7 +184,21 @@
         TargetPanel.Height = Panel_Instructions.Parent.Height
         TargetPanel.Width = Panel_Instructions.Parent.Width
         TargetPanel.Show()
-
     End Sub
 
+    Public Sub ShowQuestion(ByVal Question As QuizClass.Question, ByVal QuestionIdx As Integer)
+        ' Update the view showing the question
+        Me.Label_Quiz_Question.Text = Question.Question
+
+        Me.RadioButton_Quiz_Answer1.Text = Question.AnswerList(0)
+        Me.RadioButton_Quiz_Answer2.Text = Question.AnswerList(1)
+        Me.RadioButton_Quiz_Answer3.Text = Question.AnswerList(2)
+        Me.RadioButton_Quiz_Answer4.Text = Question.AnswerList(3)
+
+        Me.QuizQuestionIdx = QuestionIdx
+    End Sub
+
+    Private Sub Button_Next_Quiz_Question_Click(sender As Object, e As EventArgs) Handles Button_Next_Quiz_Question.Click
+        CurrentUser.NextQuestion()
+    End Sub
 End Class
