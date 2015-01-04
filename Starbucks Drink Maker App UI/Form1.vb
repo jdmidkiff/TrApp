@@ -18,9 +18,9 @@ Public Class HomeForm
     Private Sub HomeForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         SelectedDrink = ""
         SelectedAction = ""
-        ShowContentPanel(Panel_Instructions)
         SelectDrink("hide")
         SelectAction("none")
+        ShowContentPanel(Panel_Instructions)
 
         DrinkDict.Add("Chai", New DrinkClass("Chai", ".\resources\Starbucks Chai Recipe Card.png", ".\resources\Chai Questions.txt"))
         DrinkDict.Add("Latte", New DrinkClass("Latte", ".\resources\Starbucks Latte Recipe Card.png", ".\resources\Latte Questions.txt"))
@@ -107,6 +107,13 @@ Public Class HomeForm
             Case "exit"
                 Button_Exit.BackColor = SelectededBackColor
                 Panel_Drink.Hide()
+                Panel_Instructions.Hide()
+                Panel_Quiz.Hide()
+                Panel_Recipes.Hide()
+                Panel_Results.Hide()
+
+            Case "none"
+                '   Panel_Drink.Hide()
                 Panel_Instructions.Hide()
                 Panel_Quiz.Hide()
                 Panel_Recipes.Hide()
@@ -321,11 +328,20 @@ Public Class HomeForm
 
         Label_Quiz_Question.Visible = False
 
-        Panel_Quiz.Hide()
+        '   Panel_Quiz.Hide()
 
         Button_Next_Quiz_Question.Enabled = False
         Button_Next_Quiz_Question.Visible = False
 
         SelectDrink("none")
+        SelectAction("none")
+    End Sub
+
+    Private Sub SplitContainer1_Panel1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles SplitContainer1.Panel1.Paint
+
+    End Sub
+
+    Private Sub SplitContainer2_Panel2_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles SplitContainer2.Panel2.Paint
+
     End Sub
 End Class

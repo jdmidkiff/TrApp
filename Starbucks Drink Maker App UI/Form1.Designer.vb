@@ -90,8 +90,8 @@ Partial Class HomeForm
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(785, 659)
-        Me.SplitContainer1.SplitterDistance = 175
+        Me.SplitContainer1.Size = New System.Drawing.Size(1093, 659)
+        Me.SplitContainer1.SplitterDistance = 161
         Me.SplitContainer1.TabIndex = 0
         '
         'Button_Quizzes
@@ -161,7 +161,7 @@ Partial Class HomeForm
         Me.SplitContainer2.Panel2.Controls.Add(Me.Panel_Quiz)
         Me.SplitContainer2.Panel2.Controls.Add(Me.Panel_Results)
         Me.SplitContainer2.Panel2.Controls.Add(Me.Panel_Instructions)
-        Me.SplitContainer2.Size = New System.Drawing.Size(606, 659)
+        Me.SplitContainer2.Size = New System.Drawing.Size(928, 659)
         Me.SplitContainer2.SplitterDistance = 146
         Me.SplitContainer2.TabIndex = 0
         '
@@ -184,7 +184,7 @@ Partial Class HomeForm
         Me.Label_Drink_Latte.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_Drink_Latte.Image = Global.Starbucks_Drink_Maker_App_UI.My.Resources.Resources.Starbucks_Latte_Diagram
         Me.Label_Drink_Latte.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label_Drink_Latte.Location = New System.Drawing.Point(19, 25)
+        Me.Label_Drink_Latte.Location = New System.Drawing.Point(170, 26)
         Me.Label_Drink_Latte.Name = "Label_Drink_Latte"
         Me.Label_Drink_Latte.Size = New System.Drawing.Size(110, 110)
         Me.Label_Drink_Latte.TabIndex = 14
@@ -197,7 +197,7 @@ Partial Class HomeForm
         Me.Label_Drink_Chai.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_Drink_Chai.Image = Global.Starbucks_Drink_Maker_App_UI.My.Resources.Resources.Starbucks_Chai_Diagram
         Me.Label_Drink_Chai.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label_Drink_Chai.Location = New System.Drawing.Point(412, 25)
+        Me.Label_Drink_Chai.Location = New System.Drawing.Point(14, 26)
         Me.Label_Drink_Chai.Name = "Label_Drink_Chai"
         Me.Label_Drink_Chai.Size = New System.Drawing.Size(110, 110)
         Me.Label_Drink_Chai.TabIndex = 17
@@ -210,7 +210,7 @@ Partial Class HomeForm
         Me.Label_Drink_Macchiato.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_Drink_Macchiato.Image = Global.Starbucks_Drink_Maker_App_UI.My.Resources.Resources.Starbucks_Macchiato_Diagram
         Me.Label_Drink_Macchiato.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label_Drink_Macchiato.Location = New System.Drawing.Point(284, 25)
+        Me.Label_Drink_Macchiato.Location = New System.Drawing.Point(326, 26)
         Me.Label_Drink_Macchiato.Name = "Label_Drink_Macchiato"
         Me.Label_Drink_Macchiato.Size = New System.Drawing.Size(110, 110)
         Me.Label_Drink_Macchiato.TabIndex = 16
@@ -223,7 +223,7 @@ Partial Class HomeForm
         Me.Label_Drink_Mocha.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_Drink_Mocha.Image = Global.Starbucks_Drink_Maker_App_UI.My.Resources.Resources.Starbucks_Mocha_Diagram
         Me.Label_Drink_Mocha.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label_Drink_Mocha.Location = New System.Drawing.Point(155, 26)
+        Me.Label_Drink_Mocha.Location = New System.Drawing.Point(482, 26)
         Me.Label_Drink_Mocha.Name = "Label_Drink_Mocha"
         Me.Label_Drink_Mocha.Size = New System.Drawing.Size(110, 110)
         Me.Label_Drink_Mocha.TabIndex = 15
@@ -284,10 +284,9 @@ Partial Class HomeForm
         Me.Panel_Quiz.Controls.Add(Me.Label_Quiz_Question)
         Me.Panel_Quiz.Controls.Add(Me.RadioButton_Quiz_Answer2)
         Me.Panel_Quiz.Controls.Add(Me.RadioButton_Quiz_Answer1)
-        Me.Panel_Quiz.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel_Quiz.Location = New System.Drawing.Point(0, 0)
+        Me.Panel_Quiz.Location = New System.Drawing.Point(0, 442)
         Me.Panel_Quiz.Name = "Panel_Quiz"
-        Me.Panel_Quiz.Size = New System.Drawing.Size(606, 509)
+        Me.Panel_Quiz.Size = New System.Drawing.Size(254, 67)
         Me.Panel_Quiz.TabIndex = 1
         Me.Panel_Quiz.Visible = False
         '
@@ -371,7 +370,7 @@ Partial Class HomeForm
         '
         Me.RadioButton_Quiz_Answer4.AutoSize = True
         Me.RadioButton_Quiz_Answer4.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton_Quiz_Answer4.Location = New System.Drawing.Point(32, 259)
+        Me.RadioButton_Quiz_Answer4.Location = New System.Drawing.Point(21, 259)
         Me.RadioButton_Quiz_Answer4.Name = "RadioButton_Quiz_Answer4"
         Me.RadioButton_Quiz_Answer4.Size = New System.Drawing.Size(77, 22)
         Me.RadioButton_Quiz_Answer4.TabIndex = 5
@@ -384,7 +383,7 @@ Partial Class HomeForm
         '
         Me.RadioButton_Quiz_Answer3.AutoSize = True
         Me.RadioButton_Quiz_Answer3.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton_Quiz_Answer3.Location = New System.Drawing.Point(32, 218)
+        Me.RadioButton_Quiz_Answer3.Location = New System.Drawing.Point(21, 218)
         Me.RadioButton_Quiz_Answer3.Name = "RadioButton_Quiz_Answer3"
         Me.RadioButton_Quiz_Answer3.Size = New System.Drawing.Size(77, 22)
         Me.RadioButton_Quiz_Answer3.TabIndex = 4
@@ -397,7 +396,7 @@ Partial Class HomeForm
         '
         Me.Label_Quiz_Question.AutoSize = True
         Me.Label_Quiz_Question.Font = New System.Drawing.Font("Franklin Gothic Medium", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Quiz_Question.Location = New System.Drawing.Point(32, 81)
+        Me.Label_Quiz_Question.Location = New System.Drawing.Point(21, 81)
         Me.Label_Quiz_Question.Name = "Label_Quiz_Question"
         Me.Label_Quiz_Question.Size = New System.Drawing.Size(82, 24)
         Me.Label_Quiz_Question.TabIndex = 1
@@ -408,7 +407,7 @@ Partial Class HomeForm
         '
         Me.RadioButton_Quiz_Answer2.AutoSize = True
         Me.RadioButton_Quiz_Answer2.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton_Quiz_Answer2.Location = New System.Drawing.Point(32, 178)
+        Me.RadioButton_Quiz_Answer2.Location = New System.Drawing.Point(21, 178)
         Me.RadioButton_Quiz_Answer2.Name = "RadioButton_Quiz_Answer2"
         Me.RadioButton_Quiz_Answer2.Size = New System.Drawing.Size(77, 22)
         Me.RadioButton_Quiz_Answer2.TabIndex = 3
@@ -421,7 +420,7 @@ Partial Class HomeForm
         '
         Me.RadioButton_Quiz_Answer1.AutoSize = True
         Me.RadioButton_Quiz_Answer1.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton_Quiz_Answer1.Location = New System.Drawing.Point(32, 138)
+        Me.RadioButton_Quiz_Answer1.Location = New System.Drawing.Point(21, 138)
         Me.RadioButton_Quiz_Answer1.Name = "RadioButton_Quiz_Answer1"
         Me.RadioButton_Quiz_Answer1.Size = New System.Drawing.Size(77, 22)
         Me.RadioButton_Quiz_Answer1.TabIndex = 2
@@ -472,7 +471,7 @@ Partial Class HomeForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(785, 659)
+        Me.ClientSize = New System.Drawing.Size(1093, 659)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
