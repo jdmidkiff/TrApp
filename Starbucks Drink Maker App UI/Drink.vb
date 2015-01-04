@@ -1,14 +1,71 @@
 ﻿Public Class Quiz
 
-    Private Structure Question
-        Public Question As String
-        Public AnswerList As Array
-        Public CorrectAnswer As Integer
+    Public DrinkName As String
+    Public QuizFileName As String
+    Private CurrentQuestion As Question
+
+    Public Structure Question
+        Dim Question As String
+        Dim AnswerList As List(Of String)
+        Dim CorrectAnswer As Integer
     End Structure
 
     Private QuestionList As New List(Of Question)
 
-    '   Public Sub 
+    Public Sub New(ByVal Name As String, ByVal Filename As String)
+        '   This method is a constructor for the Quiz object loads data from a file containing the quiz data  
 
+        '   Set the drink name to used for a given instance of the class
+        DrinkName = Name
 
+        '   Open the data file & read the data into a "Question" object
+        Using QuizReader As New Microsoft.VisualBasic.FileIO.TextFieldParser(QuizFileName)
+            QuizReader.TextFieldType = FileIO.FieldType.Delimited
+            QuizReader.SetDelimiters("/")
+            Dim CurrentRow As String()
+
+            '   Iterate through the rows in the data file...
+            While Not QuizReader.EndOfData
+                Try
+                    CurrentRow = QuizReader.ReadFields()
+                    Dim currQuestion As New Question
+
+                    '   Load data from the file into the appropriate object variables...
+                    currQuestion.Question = CurrentRow(0)
+                    currQuestion.AnswerList.Add(CurrentRow(1))
+                    currQuestion.AnswerList.Add(CurrentRow(2))
+                    currQuestion.AnswerList.Add(CurrentRow(3))
+                    currQuestion.AnswerList.Add(CurrentRow(4))
+                    currQuestion.CorrectAnswer = CurrentRow(5)
+
+                    '   Add the question to the list of questions associated with the current quiz...
+                    QuestionList.Add(currQuestion)
+
+                Catch ex As Microsoft.VisualBasic.FileIO.MalformedLineException
+                    MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
+                End Try
+            End While
+        End Using
+    End Sub
+
+    Public Function GetQuestion() As Question
+        '   Dim q As Question
+
+        CurrentQuestion.Question = "Where art thou?"
+        CurrentQuestion.AnswerList = New List(Of String)
+        CurrentQuestion.AnswerList.Add("In the shed")
+        CurrentQuestion.AnswerList.Add("In the Viranda")
+        CurrentQuestion.AnswerList.Add("In the side yard")
+        CurrentQuestion.CorrectAnswer = 2
+
+        GetQuestion = CurrentQuestion
+    End Function
+
+    Public Function CheckAnswer(ByVal UserResponse) As Boolean
+        CheckAnswer = (CurrentQuestion.CorrectAnswer = UserResponse)
+    End Function
+
+    Public Sub ResetQuiz()
+        CurrentQuestion = Nothing
+    End Sub
 End Class

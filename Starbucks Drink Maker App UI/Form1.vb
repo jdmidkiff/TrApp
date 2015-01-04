@@ -121,7 +121,7 @@
                         PictureBox_Recipe.Load(".\resources\Starbucks Chai Recipe Card.png")
                         PictureBox_Recipe.Visible = True
                     Case "quizzes"
-                        TakeQuiz(SelectedDrink)
+                        '   TakeQuiz(SelectedDrink)
                 End Select
                 Panel_Drink.Show()
 
@@ -132,7 +132,7 @@
                         PictureBox_Recipe.Load(".\resources\Starbucks Latte Recipe Card.png")
                         PictureBox_Recipe.Visible = True
                     Case "quizzes"
-                        TakeQuiz(SelectedDrink)
+                        '   TakeQuiz(SelectedDrink)
                 End Select
                 Panel_Drink.Show()
 
@@ -143,7 +143,7 @@
                         PictureBox_Recipe.Load(".\resources\Starbucks Macchiato Recipe Card.png")
                         PictureBox_Recipe.Visible = True
                     Case "quizzes"
-                        TakeQuiz(SelectedDrink)
+                        '   TakeQuiz(SelectedDrink)
                 End Select
                 Panel_Drink.Show()
 
@@ -154,7 +154,7 @@
                         PictureBox_Recipe.Load(".\resources\Starbucks Mocha Recipe Card.png")
                         PictureBox_Recipe.Visible = True
                     Case "quizzes"
-                        TakeQuiz(SelectedDrink)
+                        '   TakeQuiz(SelectedDrink)
                 End Select
                 Panel_Drink.Show()
 
@@ -187,73 +187,4 @@
 
     End Sub
 
-    Private Sub TakeQuiz(ByVal SelectedDrink As String)
-        Dim QuizFilename = ""
-        Dim QuizFoldername = ".\Resources\"
-
-        Select Case SelectedDrink
-            Case "chai"
-                QuizFilename = "Chai Questions.txt"
-            Case "latte"
-                QuizFilename = "Latte Questions.txt"
-            Case "macchiato"
-                QuizFilename = "Macchiato Questions.txt"
-            Case "mocha"
-                QuizFilename = "Mocha Questions.txt"
-            Case Else
-                MsgBox("Unhandled drink name: '" & SelectedDrink & "'")
-        End Select
-
-        LoadQuiz(QuizFoldername & QuizFilename)
-
-        '   MsgBox("Drink name: '" & SelectedDrink & "'" & vbCrLf & "QuizFilename: '" & QuizFilename & "'" & vbCrLf & "QuizFoldername: '" & QuizFoldername & "'")
-
-        '   Label_Quiz_Question.Visible = True
-        '   RadioButton_Quiz_Answer1.Visible = True
-        '   RadioButton_Quiz_Answer2.Visible = True
-        '   RadioButton_Quiz_Answer3.Visible = True
-        '   RadioButton_Quiz_Answer4.Visible = True
-
-        '   Button_Prev_Quiz_Question.Visible = True
-        '   Button_Prev_Quiz_Question.Enabled = False
-
-        '   Button_Next_Quiz_Question.Visible = True
-        '   Button_Next_Quiz_Question.Enabled = False
-
-    End Sub
-
-    Private Sub LoadQuiz(ByVal QuizFileName As String)
-        ' Clearing previously loaded quiz
-        CurrentQuiz.Clear()
-        QuizQuestionIdx = 1
-
-        Using QuizReader As New Microsoft.VisualBasic.
-                      FileIO.TextFieldParser(
-                        QuizFileName)
-            QuizReader.TextFieldType = FileIO.FieldType.Delimited
-            QuizReader.SetDelimiters("/")
-            Dim currentRow As String()
-            While Not QuizReader.EndOfData
-                Try
-                    currentRow = QuizReader.ReadFields()
-                    Dim currentField As String
-                    Dim question As New ArrayList
-
-                    ' Creating quiz question with all possible answers and correct answer
-                    For Each currentField In currentRow
-                        question.Add(currentField)
-                    Next
-
-                    ' Adding quiz question to CurrentQuiz member variable
-                    CurrentQuiz.Add(question)
-                Catch ex As Microsoft.VisualBasic.
-                            FileIO.MalformedLineException
-                    MsgBox("Line " & ex.Message &
-                    "is not valid and will be skipped.")
-                End Try
-            End While
-        End Using
-
-        NumQuizQuestions = CurrentQuiz.Count
-    End Sub
 End Class
