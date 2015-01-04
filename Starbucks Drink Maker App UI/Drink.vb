@@ -86,14 +86,13 @@ Public Class QuizClass
         'CurrentQuestion.AnswerList.Add("In the Boat House")
         'CurrentQuestion.CorrectAnswer = 2
 
-        CurrentQuestionNumber = CurrentQuestionNumber + 1
-
         If (CurrentQuestionNumber < NumberOfQuestions) Then
             CurrentQuestion = QuestionList(CurrentQuestionNumber)
         Else
             CurrentQuestion = New Question
         End If
 
+        CurrentQuestionNumber = CurrentQuestionNumber + 1
         GetQuestion = CurrentQuestion
     End Function
 
@@ -103,5 +102,6 @@ Public Class QuizClass
 
     Public Sub ResetQuiz()
         CurrentQuestion = Nothing
+        CurrentQuestionNumber = 0
     End Sub
 End Class

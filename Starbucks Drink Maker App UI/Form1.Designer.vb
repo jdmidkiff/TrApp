@@ -42,9 +42,9 @@ Partial Class HomeForm
         Me.Panel_Quiz = New System.Windows.Forms.Panel()
         Me.Button_Next_Quiz_Question = New System.Windows.Forms.Button()
         Me.Label_Quiz_Counter = New System.Windows.Forms.Label()
-        Me.lblwrongguess2 = New System.Windows.Forms.Label()
-        Me.lblwrongguess3 = New System.Windows.Forms.Label()
-        Me.lblwrongguess1 = New System.Windows.Forms.Label()
+        Me.Wrong_Guess_2 = New System.Windows.Forms.Label()
+        Me.Wrong_Guess_3 = New System.Windows.Forms.Label()
+        Me.Wrong_Guess_1 = New System.Windows.Forms.Label()
         Me.Label_Quiz_Score = New System.Windows.Forms.Label()
         Me.Label_Quiz_Incorrect_Count = New System.Windows.Forms.Label()
         Me.RadioButton_Quiz_Answer4 = New System.Windows.Forms.RadioButton()
@@ -274,9 +274,9 @@ Partial Class HomeForm
         '
         Me.Panel_Quiz.Controls.Add(Me.Button_Next_Quiz_Question)
         Me.Panel_Quiz.Controls.Add(Me.Label_Quiz_Counter)
-        Me.Panel_Quiz.Controls.Add(Me.lblwrongguess2)
-        Me.Panel_Quiz.Controls.Add(Me.lblwrongguess3)
-        Me.Panel_Quiz.Controls.Add(Me.lblwrongguess1)
+        Me.Panel_Quiz.Controls.Add(Me.Wrong_Guess_2)
+        Me.Panel_Quiz.Controls.Add(Me.Wrong_Guess_3)
+        Me.Panel_Quiz.Controls.Add(Me.Wrong_Guess_1)
         Me.Panel_Quiz.Controls.Add(Me.Label_Quiz_Score)
         Me.Panel_Quiz.Controls.Add(Me.Label_Quiz_Incorrect_Count)
         Me.Panel_Quiz.Controls.Add(Me.RadioButton_Quiz_Answer4)
@@ -310,36 +310,40 @@ Partial Class HomeForm
         Me.Label_Quiz_Counter.Size = New System.Drawing.Size(73, 21)
         Me.Label_Quiz_Counter.TabIndex = 6
         Me.Label_Quiz_Counter.Text = "QCounter"
+        Me.Label_Quiz_Counter.Visible = False
         '
-        'lblwrongguess2
+        'Wrong_Guess_2
         '
-        Me.lblwrongguess2.AutoSize = True
-        Me.lblwrongguess2.Font = New System.Drawing.Font("Franklin Gothic Medium", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblwrongguess2.Location = New System.Drawing.Point(493, 4)
-        Me.lblwrongguess2.Name = "lblwrongguess2"
-        Me.lblwrongguess2.Size = New System.Drawing.Size(16, 24)
-        Me.lblwrongguess2.TabIndex = 11
-        Me.lblwrongguess2.Text = "l"
+        Me.Wrong_Guess_2.AutoSize = True
+        Me.Wrong_Guess_2.Font = New System.Drawing.Font("Franklin Gothic Medium", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Wrong_Guess_2.Location = New System.Drawing.Point(493, 4)
+        Me.Wrong_Guess_2.Name = "Wrong_Guess_2"
+        Me.Wrong_Guess_2.Size = New System.Drawing.Size(16, 24)
+        Me.Wrong_Guess_2.TabIndex = 11
+        Me.Wrong_Guess_2.Text = "l"
+        Me.Wrong_Guess_2.Visible = False
         '
-        'lblwrongguess3
+        'Wrong_Guess_3
         '
-        Me.lblwrongguess3.AutoSize = True
-        Me.lblwrongguess3.Font = New System.Drawing.Font("Franklin Gothic Medium", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblwrongguess3.Location = New System.Drawing.Point(504, 4)
-        Me.lblwrongguess3.Name = "lblwrongguess3"
-        Me.lblwrongguess3.Size = New System.Drawing.Size(16, 24)
-        Me.lblwrongguess3.TabIndex = 10
-        Me.lblwrongguess3.Text = "l"
+        Me.Wrong_Guess_3.AutoSize = True
+        Me.Wrong_Guess_3.Font = New System.Drawing.Font("Franklin Gothic Medium", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Wrong_Guess_3.Location = New System.Drawing.Point(504, 4)
+        Me.Wrong_Guess_3.Name = "Wrong_Guess_3"
+        Me.Wrong_Guess_3.Size = New System.Drawing.Size(16, 24)
+        Me.Wrong_Guess_3.TabIndex = 10
+        Me.Wrong_Guess_3.Text = "l"
+        Me.Wrong_Guess_3.Visible = False
         '
-        'lblwrongguess1
+        'Wrong_Guess_1
         '
-        Me.lblwrongguess1.AutoSize = True
-        Me.lblwrongguess1.Font = New System.Drawing.Font("Franklin Gothic Medium", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblwrongguess1.Location = New System.Drawing.Point(482, 4)
-        Me.lblwrongguess1.Name = "lblwrongguess1"
-        Me.lblwrongguess1.Size = New System.Drawing.Size(16, 24)
-        Me.lblwrongguess1.TabIndex = 9
-        Me.lblwrongguess1.Text = "l"
+        Me.Wrong_Guess_1.AutoSize = True
+        Me.Wrong_Guess_1.Font = New System.Drawing.Font("Franklin Gothic Medium", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Wrong_Guess_1.Location = New System.Drawing.Point(482, 4)
+        Me.Wrong_Guess_1.Name = "Wrong_Guess_1"
+        Me.Wrong_Guess_1.Size = New System.Drawing.Size(16, 24)
+        Me.Wrong_Guess_1.TabIndex = 9
+        Me.Wrong_Guess_1.Text = "l"
+        Me.Wrong_Guess_1.Visible = False
         '
         'Label_Quiz_Score
         '
@@ -350,6 +354,7 @@ Partial Class HomeForm
         Me.Label_Quiz_Score.Size = New System.Drawing.Size(51, 21)
         Me.Label_Quiz_Score.TabIndex = 8
         Me.Label_Quiz_Score.Text = "Score:"
+        Me.Label_Quiz_Score.Visible = False
         '
         'Label_Quiz_Incorrect_Count
         '
@@ -360,6 +365,7 @@ Partial Class HomeForm
         Me.Label_Quiz_Incorrect_Count.Size = New System.Drawing.Size(132, 21)
         Me.Label_Quiz_Incorrect_Count.TabIndex = 7
         Me.Label_Quiz_Incorrect_Count.Text = "Incorrect Guesses:"
+        Me.Label_Quiz_Incorrect_Count.Visible = False
         '
         'RadioButton_Quiz_Answer4
         '
@@ -510,9 +516,9 @@ Partial Class HomeForm
     Friend WithEvents Panel_Recipes As System.Windows.Forms.Panel
     Friend WithEvents Panel_Quiz As System.Windows.Forms.Panel
     Friend WithEvents Label_Quiz_Counter As System.Windows.Forms.Label
-    Friend WithEvents lblwrongguess2 As System.Windows.Forms.Label
-    Friend WithEvents lblwrongguess3 As System.Windows.Forms.Label
-    Friend WithEvents lblwrongguess1 As System.Windows.Forms.Label
+    Friend WithEvents Wrong_Guess_2 As System.Windows.Forms.Label
+    Friend WithEvents Wrong_Guess_3 As System.Windows.Forms.Label
+    Friend WithEvents Wrong_Guess_1 As System.Windows.Forms.Label
     Friend WithEvents Label_Quiz_Score As System.Windows.Forms.Label
     Friend WithEvents Label_Quiz_Incorrect_Count As System.Windows.Forms.Label
     Friend WithEvents Panel_Instructions As System.Windows.Forms.Panel

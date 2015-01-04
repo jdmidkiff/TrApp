@@ -1,4 +1,11 @@
-﻿Public Class HomeForm
+﻿' To-Do:
+'   1) Checking if user already exists and setting the member variable "existed" to True/False
+'   2) Implement the User.Save() method to save the user and their best scores
+'   3) Implement the results page
+'   4) Implement the login page
+'
+
+Public Class HomeForm
     '   Declare class-level variables to keep track of the user's selections...
     Dim SelectedDrink As String
     Dim SelectedAction As String
@@ -20,6 +27,7 @@
         DrinkDict.Add("Macchiato", New DrinkClass("Macchiato", ".\resources\Starbucks Macchiato Recipe Card.png", ".\resources\Macchiato Questions.txt"))
         DrinkDict.Add("Mocha", New DrinkClass("Mocha", ".\resources\Starbucks Mocha Recipe Card.png", ".\resources\Mocha Questions.txt"))
 
+        CurrentUser = New User("Sally", Me)
     End Sub
 
     Private Sub Button_Quizzes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button_Quizzes.Click
@@ -62,7 +70,7 @@
     End Sub
 
     Private Sub SelectAction(ByVal Action As String)
-        Dim SelectededBackColor = Color.GreenYellow
+        Dim SelectededBackColor = Color.Green
         '   Dim UnselectededBackColor = Control.DefaultBackColor
         Dim UnselectededBackColor = Color.LightGray
 
@@ -109,7 +117,7 @@
 
     Private Sub SelectDrink(ByVal DrinkName As String)
 
-        Dim SelectededBackColor = Color.GreenYellow
+        Dim SelectededBackColor = Color.Green
         Dim UnselectededBackColor = Color.White
 
         '   Set all the picture box's background color to "unselected" color
@@ -129,20 +137,7 @@
                         PictureBox_Recipe.Load(".\resources\Starbucks Chai Recipe Card.png")
                         PictureBox_Recipe.Visible = True
                     Case "quizzes"
-                        '   TakeQuiz(SelectedDrink)
-
-                        Dim q = DrinkDict(SelectedDrink).Quiz.GetQuestion()
-
-                        Label_Quiz_Question.Visible = True
-                        Label_Quiz_Question.Text = q.Question
-                        RadioButton_Quiz_Answer1.Visible = True
-                        RadioButton_Quiz_Answer1.Text = q.AnswerList(0)
-                        RadioButton_Quiz_Answer2.Visible = True
-                        RadioButton_Quiz_Answer2.Text = q.AnswerList(1)
-                        RadioButton_Quiz_Answer3.Visible = True
-                        RadioButton_Quiz_Answer3.Text = q.AnswerList(2)
-                        RadioButton_Quiz_Answer4.Visible = True
-                        RadioButton_Quiz_Answer4.Text = q.AnswerList(3)
+                        CurrentUser.StartQuiz(DrinkDict(SelectedDrink))
 
                 End Select
                 Panel_Drink.Show()
@@ -154,7 +149,7 @@
                         PictureBox_Recipe.Load(".\resources\Starbucks Latte Recipe Card.png")
                         PictureBox_Recipe.Visible = True
                     Case "quizzes"
-                        '   TakeQuiz(SelectedDrink)
+                        CurrentUser.StartQuiz(DrinkDict(SelectedDrink))
                 End Select
                 Panel_Drink.Show()
 
@@ -165,7 +160,7 @@
                         PictureBox_Recipe.Load(".\resources\Starbucks Macchiato Recipe Card.png")
                         PictureBox_Recipe.Visible = True
                     Case "quizzes"
-                        '   TakeQuiz(SelectedDrink)
+                        CurrentUser.StartQuiz(DrinkDict(SelectedDrink))
                 End Select
                 Panel_Drink.Show()
 
@@ -176,7 +171,7 @@
                         PictureBox_Recipe.Load(".\resources\Starbucks Mocha Recipe Card.png")
                         PictureBox_Recipe.Visible = True
                     Case "quizzes"
-                        '   TakeQuiz(SelectedDrink)
+                        CurrentUser.StartQuiz(DrinkDict(SelectedDrink))
                 End Select
                 Panel_Drink.Show()
 
@@ -244,21 +239,93 @@
             MsgBox("Unexpected situation ... no option appears to be selected")
         End If
 
-        Dim correct = DrinkDict(SelectedDrink).Quiz.CheckAnswer(SelectedAnswer)
+        'Dim correct = DrinkDict(SelectedDrink).Quiz.CheckAnswer(SelectedAnswer)
 
-        MsgBox("Move to next question..." & vbCrLf & "SelectedAnswer = " & SelectedAnswer.ToString() & vbCrLf & "correct = " & correct.ToString())
-
+        'MsgBox("Move to next question..." & vbCrLf & "SelectedAnswer = " & SelectedAnswer.ToString() & vbCrLf & "correct = " & correct.ToString())
+        CurrentUser.SubmitQuestionAnswer(SelectedAnswer)
     End Sub
 
-    Public Sub ShowQuestion(ByVal Question As QuizClass.Question, ByVal QuestionIdx As Integer)
+    Public Sub UpdateScore(ByVal Score As Integer)
+        Me.Label_Quiz_Score.Text = "Score: " & Score
+    End Sub
+
+    Public Sub RemoveTallyMark(ByVal Idx As Integer)
+        Select Case Idx
+            Case 1
+                Me.Wrong_Guess_1.ForeColor = Color.Red
+            Case 2
+                Me.Wrong_Guess_2.ForeColor = Color.Red
+            Case 3
+                Me.Wrong_Guess_3.ForeColor = Color.Red
+                'Default
+                'MsgBox()
+        End Select
+    End Sub
+
+    Public Sub ShowQuestion(ByVal Question As QuizClass.Question, ByVal QuestionIdx As Integer, ByVal NumQuestions As Integer)
         ' Update the view showing the question
-        Me.Label_Quiz_Question.Text = Question.Question
+        Label_Quiz_Question.Visible = True
+        Label_Quiz_Question.Text = Question.Question
+        RadioButton_Quiz_Answer1.Visible = True
+        RadioButton_Quiz_Answer1.Text = Question.AnswerList(0)
+        RadioButton_Quiz_Answer2.Visible = True
+        RadioButton_Quiz_Answer2.Text = Question.AnswerList(1)
+        RadioButton_Quiz_Answer3.Visible = True
+        RadioButton_Quiz_Answer3.Text = Question.AnswerList(2)
+        RadioButton_Quiz_Answer4.Visible = True
+        RadioButton_Quiz_Answer4.Text = Question.AnswerList(3)
+        QuizQuestionIdx = QuestionIdx
+        Me.Label_Quiz_Counter.Text = QuestionIdx & " of " & NumQuestions
+    End Sub
 
-        Me.RadioButton_Quiz_Answer1.Text = Question.AnswerList(0)
-        Me.RadioButton_Quiz_Answer2.Text = Question.AnswerList(1)
-        Me.RadioButton_Quiz_Answer3.Text = Question.AnswerList(2)
-        Me.RadioButton_Quiz_Answer4.Text = Question.AnswerList(3)
+    Public Sub StartQuiz()
+        Me.Button_Recipes.Enabled = False
+        Me.Button_Results.Enabled = False
+        Me.Button_Quizzes.Enabled = False
 
-        Me.QuizQuestionIdx = QuestionIdx
+        Me.Wrong_Guess_1.ForeColor = Color.Black
+        Me.Wrong_Guess_2.ForeColor = Color.Black
+        Me.Wrong_Guess_3.ForeColor = Color.Black
+
+        Me.Wrong_Guess_1.Visible = True
+        Me.Wrong_Guess_2.Visible = True
+        Me.Wrong_Guess_3.Visible = True
+
+        Me.Label_Quiz_Incorrect_Count.Visible = True
+
+        Me.Label_Quiz_Score.Visible = True
+
+        Me.Label_Quiz_Counter.Visible = True
+        Button_Next_Quiz_Question.Visible = True
+    End Sub
+
+    Public Sub FinishQuiz()
+        Button_Recipes.Enabled = True
+        Button_Results.Enabled = True
+        Button_Quizzes.Enabled = True
+
+        Wrong_Guess_1.Visible = False
+        Wrong_Guess_2.Visible = False
+        Wrong_Guess_3.Visible = False
+
+        Label_Quiz_Incorrect_Count.Visible = False
+
+        Label_Quiz_Score.Visible = False
+
+        Label_Quiz_Counter.Visible = False
+
+        RadioButton_Quiz_Answer1.Visible = False
+        RadioButton_Quiz_Answer2.Visible = False
+        RadioButton_Quiz_Answer3.Visible = False
+        RadioButton_Quiz_Answer4.Visible = False
+
+        Label_Quiz_Question.Visible = False
+
+        Panel_Quiz.Hide()
+
+        Button_Next_Quiz_Question.Enabled = False
+        Button_Next_Quiz_Question.Visible = False
+
+        SelectDrink("none")
     End Sub
 End Class
