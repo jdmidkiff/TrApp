@@ -77,7 +77,8 @@ Public Class QuizClass
         CurrentQuestion.AnswerList = New List(Of String)
         CurrentQuestion.AnswerList.Add("In the shed")
         CurrentQuestion.AnswerList.Add("In the Viranda")
-        CurrentQuestion.AnswerList.Add("In the side yard")
+        CurrentQuestion.AnswerList.Add("In the Rose Garden")
+        CurrentQuestion.AnswerList.Add("In the Boat House")
         CurrentQuestion.CorrectAnswer = 2
 
         GetQuestion = CurrentQuestion
